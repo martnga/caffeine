@@ -17,6 +17,17 @@
 // ThreeSort.threeSort(3,2,1); // [1,2,3]
 
 public class ThreeSort {
+	import java.util.Arrays;
+	
+	public static void main(String[] args){
+		
+		
+	}
+	
+	public static threeSort(int x, int y, int z){
+		
+		
+	}
 
 }
 
