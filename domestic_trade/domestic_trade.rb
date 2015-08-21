@@ -28,4 +28,28 @@
 
 # If we enter 'DM1182', you program should return:
 # {:total_KSH=> 13290, :largest=> 'Nairobi'}.
+require 'csv'
 
+def domestic_trade(itemId)
+  # Your Code Here!
+  rows = CSV.read('Trans.csv')
+  totalSales = 0
+  totalloc = {}
+
+	rows.each do |row|
+		newarr = row.split(",")
+		location = newarr[0]
+
+		id = newarr[1]
+		if id == itemId
+			totalSales += newarr[2].to_f
+			if !total_loc[location]
+        		total_loc[location] = amount
+     		else
+        		total_loc[location] += amount
+      		end
+		end 
+	end
+	max = total_loc.max_by{|key, value| value}[0]
+	return {:total_KSH => totalSales, :largest => max}
+end
