@@ -3,7 +3,7 @@
 
 # You have been hired by a trade company to write a program.
 
-# They have given you a CSV (comma separated value, used in spreadsheets) file containing sales data by transaction 
+# They have given you a CSV (comma separated value, used in spreadsheets) file containing sales data by transaction
 #for 10,000 sales transactions.
 
 # Write a function that calculates the grand total of sales for a given item across all stores.
@@ -32,24 +32,31 @@ require 'csv'
 
 def domestic_trade(itemId)
   # Your Code Here!
-  rows = CSV.read('Trans.csv')
+  rows = CSV.read('TRANS.csv')
   totalSales = 0
-  totalloc = {}
+  total_loc = {}
+  max_location = 0
 
 	rows.each do |row|
-		newarr = row.split(",")
-		location = newarr[0]
+		#newarr = row.split(",")
+		location = row[0]
 
-		id = newarr[1]
+
+		id = row[1]
 		if id == itemId
-			totalSales += newarr[2].to_f
-			if !total_loc[location]
-        		total_loc[location] = amount
-     		else
-        		total_loc[location] += amount
-      		end
-		end 
+			totalSales = totalSales + row[2].to_f
+		end
+
+    if row[2].to_f > max_location
+      max_location = row[2].to_f
+    end
 	end
-	max = total_loc.max_by{|key, value| value}[0]
-	return {:total_KSH => totalSales, :largest => max}
+	#max = total_loc.max_by{|key, value| value}[0]
+	newhash = {'total KSH' => totalSales, 'largest loc' => max_location}
+
+  puts newhash
+
+  #puts largest
 end
+
+domestic_trade("DM1002")
