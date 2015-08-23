@@ -47,7 +47,7 @@ def domestic_trade(itemId)
 			totalSales = totalSales + row[2].to_f
 		end
 
-    if row[2].to_f > max_location
+    if row[2].to_f > max_location #checks for max sales in loop
       max_location = row[2].to_f
     end
 	end
