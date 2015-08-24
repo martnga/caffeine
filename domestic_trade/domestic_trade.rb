@@ -3,7 +3,7 @@
 
 # You have been hired by a trade company to write a program.
 
-# They have given you a CSV (comma separated value, used in spreadsheets) file containing sales data by transaction 
+# They have given you a CSV (comma separated value, used in spreadsheets) file containing sales data by transaction
 #for 10,000 sales transactions.
 
 # Write a function that calculates the grand total of sales for a given item across all stores.
@@ -29,3 +29,16 @@
 # If we enter 'DM1182', you program should return:
 # {:total_KSH=> 13290, :largest=> 'Nairobi'}.
 
+require 'csv'
+def domestic_trade(id)
+  result = 0
+  amounts_array = []
+  trans = CSV.read('TRANS.csv', headers:true, converters: :numeric)
+  trans.each do |items|
+   if items["code"] == id
+     result += (items["amount"]).to_i
+     amounts_array.push([((items["amount"]).to_i), items["store"]])
+   end
+  end
+  amounts_array.sort
+end
