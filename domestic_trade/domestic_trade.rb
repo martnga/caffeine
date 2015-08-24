@@ -36,6 +36,7 @@ def domestic_trade(itemId)
   totalSales = 0
   total_loc = {}
   max_location = 0
+  location  = ""
 
 	rows.each do |row|
 		#newarr = row.split(",")
@@ -45,18 +46,21 @@ def domestic_trade(itemId)
 		id = row[1]
 		if id == itemId
 			totalSales = totalSales + row[2].to_f
+
+      if row[2].to_f > max_location #checks for max sales in loop
+        max_location = row[2].to_f
+        location = row[0]
+      end
 		end
 
-    if row[2].to_f > max_location #checks for max sales in loop
-      max_location = row[2].to_f
-    end
+
 	end
 	#max = total_loc.max_by{|key, value| value}[0]
-	newhash = {'total KSH' => totalSales, 'largest loc' => max_location}
+	newhash = {'total KSH' => totalSales, 'largest loc' => location}
 
   puts newhash
 
   #puts largest
 end
 
-domestic_trade("DM1002")
+domestic_trade("DM1724")
