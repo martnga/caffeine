@@ -15,19 +15,3 @@
 
 
 #your code goes here
-def paren_matcher(str)
-  openers = 0
-  closers = 0
-  str.chars.each do |character|
-    if character == '('
-      openers += 1
-    elsif character == ')'
-      closers += 1
-    end
-    if closers > openers
-      return false
-    end
-  end
-  openers == closers
-end
-puts paren_matcher("((hello) (world(")
