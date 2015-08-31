@@ -30,27 +30,13 @@
 # {:total_KSH=> 13290, :largest=> 'Nairobi'}.
 require 'csv'
 
-<<<<<<< HEAD
-require 'csv'
-def domestic_trade(id)
-  result = 0
-  amounts_array = []
-  trans = CSV.read('TRANS.csv', headers:true, converters: :numeric)
-  trans.each do |items|
-   if items["code"] == id
-     result += (items["amount"]).to_i
-     amounts_array.push([((items["amount"]).to_i), items["store"]])
-   end
-  end
-  amounts_array.sort
-end
-=======
 def domestic_trade(itemId)
   # Your Code Here!
   rows = CSV.read('TRANS.csv')
   totalSales = 0
   total_loc = {}
   max_location = 0
+  location  = ""
 
 	rows.each do |row|
 		#newarr = row.split(",")
@@ -60,19 +46,21 @@ def domestic_trade(itemId)
 		id = row[1]
 		if id == itemId
 			totalSales = totalSales + row[2].to_f
+
+      if row[2].to_f > max_location #checks for max sales in loop
+        max_location = row[2].to_f
+        location = row[0]
+      end
 		end
 
-    if row[2].to_f > max_location #checks for max sales in loop
-      max_location = row[2].to_f
-    end
+
 	end
 	#max = total_loc.max_by{|key, value| value}[0]
-	newhash = {'total KSH' => totalSales, 'largest loc' => max_location}
+	newhash = {'total KSH' => totalSales, 'largest loc' => location}
 
   puts newhash
 
   #puts largest
 end
 
-domestic_trade("DM1002")
->>>>>>> f972d675aa6310bc86c29a90b9da0964c9837e8f
+domestic_trade("DM1724")

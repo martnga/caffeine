@@ -21,6 +21,35 @@
 // vowelMap.get('u'); // 3
 
 
+<<<<<<< HEAD
 class VowelCount {
   // Your Code Here!
 }
+=======
+import java.util.HashMap;
+
+class VowelCount {
+
+  public static HashMap vowelCount(String sentence){
+    HashMap<Character, Integer> vowels = new HashMap<Character, Integer>();
+    for (int i = 0; i < sentence.length(); i++){
+      char letter = sentence.charAt(i);
+      if ("aeiou".indexOf(letter) != -1){
+        if (vowels.get(letter) == null) {
+          vowels.put(letter, 0);
+        }
+        vowels.put(letter, vowels.get(letter) + 1);
+      }
+    }
+    return vowels;
+  }
+
+  public static void main(String[] args){
+    HashMap result = VowelCount.vowelCount("mary had a little lamb");
+    System.out.println(result.get('a'));
+    System.out.println(result.get('i'));
+    System.out.println(result.get('e'));
+    System.out.println(result.get('o'));
+  }
+}
+>>>>>>> ed523d9b5797e85e23258a2da7993b310e7b252a
