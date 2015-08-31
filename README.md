@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ##MS-3-Toy-Problems
   Toy Problems for Moringa School Cohort 3
 
@@ -19,3 +20,7 @@
   6) To fetch the new toy problem each day from the central repo, you will need to issue the following command:
 
   # $ git pull upstream master
+=======
+# caffeine
+Morning kick-start breakfast
+

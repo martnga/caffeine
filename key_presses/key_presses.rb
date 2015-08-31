@@ -22,7 +22,7 @@
 # ------- ------- -------
 
 
-<<<<<<< HEAD
+
 # Before predictive text entry systems like T9, you had to press a button repeatedly to cycle through the possible values
 # until you reached the one you wanted.
 # For example, to type "V8" you would press the 8 key three times and then again four times
@@ -33,24 +33,20 @@
 # Write a function that can calculate the amount of button presses required for any phrase.
 # Except for spaces, punctuation can be ignored. Your function should accept both uppercase and lowercase
 # letters and treat them the same.
-=======
+
 # Before predictive text entry systems like T9, you had to press a button repeatedly to cycle through the possible values until you reached the one you wanted. 
 # For example, to type "V8" you would press the 8 key three times and then again four times (pressing the 8 key cycles through T->U->V->8), giving us a total of seven key presses. 
 
 # Note: the 0 key handles spaces and outputs 0 when tapped twice.
 
-# Write a function that can calculate the amount of button presses required for any phrase. Except for spaces, punctuation can be ignored. Your function should accept both uppercase and lowercase letters and treat them the same.
->>>>>>> 33d4095b49b5e8c459e128ace59251a36e832618
-
+# Write a function that can calculate the amount of button presses required for any phrase. Except for spaces, punctuation can be ignored. Your function should accept both uppercase and lowercase letters and treat them the same
 # Examples:
 
 # presses('V8') # 7
 # presses('LOL') # 9
-<<<<<<< HEAD
+
 # presses('How R u 2day') # 23
-=======
 # presses('How R u 2day') # 23 
->>>>>>> 33d4095b49b5e8c459e128ace59251a36e832618
 # presses("i 8 2 Many mandazi 4 brekky") # 55
 
 # Bonus: Try to avoid hard-coding the number of button presses for each letter!
@@ -58,7 +54,6 @@
 
 def presses(str)
   # Your Code Here!
-<<<<<<< HEAD
   num_press = 0
   str.downcase.each_char do |letter|
   	if " 1adgjmptw*#".include? letter
@@ -78,8 +73,7 @@ end
   	return num_press
 end
 
-p presses(' ')
-=======
+p presses('  ')
 
-end
->>>>>>> 33d4095b49b5e8c459e128ace59251a36e832618
+
+
